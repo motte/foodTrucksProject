@@ -1,2 +1,2 @@
 # foodTrucksProject
-This is a Django project that has a location of food trucks.
+This is a Django project that has shows locations of food trucks.

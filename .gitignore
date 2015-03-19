@@ -3,3 +3,4 @@
 foodTrucks/foodTrucks/settings.py
 
 *.pyc
+settings.py

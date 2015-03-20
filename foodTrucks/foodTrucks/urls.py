@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', FoodTruckTemplateView.as_view(), name='food_trucks'),
-    url(r'^(?P<city>[a-z]{2})/$', FoodTruckByCityListView.as_view(), name='food_trucks_city'),
+    url(r'^(?P<city>[\w{}.-]{2,40})/$', FoodTruckByCityListView.as_view(), name='food_trucks_city'),
 
     url(r'^admin/', include(admin.site.urls)),
 )

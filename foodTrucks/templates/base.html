@@ -1,10 +1,37 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="robots" content="index, follow" />
+    <meta name="owner" content="Michael Otte" />
+    <meta name="fragment" content="!" />
+    <meta name="description" content="{% block description %}List of food trucks brought to you by Michael Otte{% endblock %}" />
+    <meta name="keywords" content="{% block keywords %}Michael Otte, food trucks{% endblock %}" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{% block page_title %}Food Trucks{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'stylesheets/main.css' %}" />
+    <link href='//fonts.googleapis.com/css?family=Lora:400italic,800italic' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,100,700" rel="stylesheet" type="text/css" />
+    {% block more_head_scripts %}{% endblock %}
+
+    <link rel="shortcut icon" href="{% static 'img/foodtruck-20150220.ico' %}" />
+    <link rel="apple-touch-icon" href="{% static 'img/foodtruck-icon-57x57.png' %}" />
+    <link rel="apple-touch-icon-precomposed" href="{% static 'img/foodtruck-icon-57x57.png' %}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/foodtruck-icon-72x72.png' %}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/foodtruck-icon-114x114.png' %}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/foodtruck-icon-144x144.png' %}" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 <body>
+{% block main_content %}{% endblock %}
 
+<script>
+    
+</script>
+{% block more_body_scripts %}{% endblock %}
 </body>
 </html>

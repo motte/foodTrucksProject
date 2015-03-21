@@ -27,10 +27,55 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 <body>
+    <nav>
+
+    </nav>
+
+    <div id="container"></div>
+    <div id="cont"></div>
+
 {% block main_content %}{% endblock %}
 
-<script>
+<!-- The core React library -->
+<script src="//fb.me/react-0.13.1.min.js"></script>
 
+<script>
+    // Notice the Capital Case of ReactJS instead of camel
+    var HelloMessage = React.createClass({
+        render: function() {
+            return React.createElement("div", null, "hello", this.props.name);
+        }
+    });
+
+    React.render(
+        React.createElement(HelloMessage, {name: "John"}),
+        document.getElementById('container')
+    );
+
+    /* This does a nice live counter */
+    var Timer = React.createClass({displayName: "Timer",
+        getInitialState: function() {
+            return {secondsElapsed: 0};
+        },
+        tick: function() {
+            this.setState({secondsElapsed: this.state.secondsElapsed + 1});
+        },
+        componentDidMount: function() {
+            this.interval = setInterval(this.tick, 1000);
+        },
+        componentWillUnmount: function() {
+            clearInterval(this.interval);
+        },
+        render: function() {
+            return (
+                React.createElement("div", null, "Seconds Elapsed: ",
+                this.state.secondsElapsed)
+            );
+        }
+    });
+
+    var mountNode = document.getElementById('cont');
+    React.render(React.createElement(Timer, null), mountNode);
 </script>
 {% block more_body_scripts %}{% endblock %}
 </body>

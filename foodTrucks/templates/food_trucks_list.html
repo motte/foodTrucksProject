@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 
-{% block page_title %}Food Trucks - {{ city }}{% endblock %}
+{% block page_title %}Food Trucks{% if city %} - {{ city }}{% endif %}{% endblock %}
 
 {% block main_content %}
 

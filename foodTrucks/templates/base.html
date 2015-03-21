@@ -76,6 +76,33 @@
 
     var mountNode = document.getElementById('cont');
     React.render(React.createElement(Timer, null), mountNode);
+
+    function nativeAjax(url, data, selector, callback){
+        var r = new XMLHttpRequest();
+        r.open("POST", url, true);
+        r.onreadystatechange = function() {
+            if (r.readyState != 4 || r.status != 200) {
+                return callback();
+            }
+            console.log(r.responseText);
+        };
+        r.send("a=1&b=2&c=3");
+    }
+
+    function jAajx(action, data, selector, callback){
+        // data = '{"moo" : [' + '{"foo":"coo","soo":"too"}' + ']}';
+        // need to convert the string to object
+        JSON.parse(data);
+
+        $.ajax({
+            url: action,
+            type: "POST",
+            data: "a=1&b=2&c=3",
+            success: function(d) {
+                console.log(d);
+            }
+        });
+    }
 </script>
 {% block more_body_scripts %}{% endblock %}
 </body>

@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{% static 'stylesheets/main.css' %}" />
     <link href='//fonts.googleapis.com/css?family=Lora:400italic,800italic' rel='stylesheet' type='text/css'>
     <link href="//fonts.googleapis.com/css?family=Raleway:400,100,700" rel="stylesheet" type="text/css" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     {% block more_head_scripts %}{% endblock %}
 
     <link rel="shortcut icon" href="{% static 'img/foodtruck-20150220.ico' %}" />
@@ -28,8 +27,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 <body>
-    <nav class="nav-wrapper">
-        <a class="logo" href=""><i class="fa fa-truck fa-flip-horizontal"></i></a>
+    <nav>
+
     </nav>
 
     <div id="container"></div>
@@ -41,17 +40,17 @@
 <script src="//fb.me/react-0.13.1.min.js"></script>
 
 <script>
+    // Notice the Capital Case of ReactJS instead of camel
+    var HelloMessage = React.createClass({
+        render: function() {
+            return React.createElement("div", null, "hello", this.props.name);
+        }
+    });
 
-//    var closure = function(){
-//        var moo = "Moo!";
-//
-//        return function() {
-//            alert(moo);
-//        }
-//    }();
-
-    window.onload = function() {closure()};
-
+    React.render(
+        React.createElement(HelloMessage, {name: "John"}),
+        document.getElementById('container')
+    );
 
     /* This does a nice live counter */
     var Timer = React.createClass({displayName: "Timer",
@@ -76,7 +75,7 @@
     });
 
     var mountNode = document.getElementById('cont');
-
+    React.render(React.createElement(Timer, null), mountNode);
 
     function nativeAjax(url, data, selector, callback){
         var r = new XMLHttpRequest();

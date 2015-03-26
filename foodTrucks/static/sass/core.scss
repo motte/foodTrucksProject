@@ -1,0 +1,39 @@
+
+$primaryColor: #00d55a;
+
+$firstComplementary: rgb(0,205,236);
+$secondComplementary: rgb(246,96,245);
+
+$lightTone: #fcfcfc;
+$darkTone: #777777;
+$secondDarkTone: #333333;
+
+
+$rightBelowModal: 1000000;
+
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}

@@ -1,56 +1,159 @@
-/*
-Error: Invalid CSS after "  display": expected ";", was ": inline-block;"
-        on line 11 of /Users/michael/Projects/foodTrucksProject/foodTrucks/static/sass/partials/navs.scss
+/* line 3, ../../sass/partials/navs.scss */
+.nav-wrapper {
+  background: #00d55a;
+  border-bottom: 1px solid #eee;
+  color: #fcfcfc;
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: 100;
+  height: 30%;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  z-index: 1000000;
+  -webkit-animation: banner-scroll-expand 300ms;
+  -moz-animation: banner-scroll-expand 300ms;
+  -ms-animation: banner-scroll-expand 300ms;
+  -o-animation: banner-scroll-expand 300ms;
+  animation: banner-scroll-expand 300ms;
+}
 
-6:   height: 60px;
-7: }
-8: 
-9: .logo {
-10:   background: re
-11:   display: inline-block;
-12:   text-align: center;
-13:   margin: 0 auto 0 auto;
-14: 
-15: }
+/* line 20, ../../sass/partials/navs.scss */
+.nav-wrapper.shrink {
+  border-radius: 100%;
+  height: 120px;
+  width: 150px;
+  top: -60px;
+  left: 50%;
+  margin-left: -75px;
+  -webkit-animation: banner-scroll-shrink 300ms;
+  -moz-animation: banner-scroll-shrink 300ms;
+  -ms-animation: banner-scroll-shrink 300ms;
+  -o-animation: banner-scroll-shrink 300ms;
+  animation: banner-scroll-shrink 300ms;
+}
 
-Backtrace:
-/Users/michael/Projects/foodTrucksProject/foodTrucks/static/sass/partials/navs.scss:11
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:1165:in `expected'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:1101:in `expected'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:1096:in `tok!'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:761:in `block in try_declaration'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:1141:in `call'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:1141:in `rethrow'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:766:in `try_declaration'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:696:in `declaration_or_ruleset'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:661:in `block_child'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:650:in `block_contents'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:642:in `block'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:635:in `ruleset'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:660:in `block_child'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:653:in `block_contents'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:117:in `stylesheet'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/scss/parser.rb:42:in `parse'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:393:in `_to_tree'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/engine.rb:268:in `render'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/vendor/listen/lib/listen/adapter.rb:254:in `call'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/Users/michael/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/sass-3.4.10/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"  display\": expected \";\", was \": inline-block;\"\A         on line 11 of /Users/michael/Projects/foodTrucksProject/foodTrucks/static/sass/partials/navs.scss\A \A 6:   height: 60px;\A 7: }\A 8: \A 9: .logo {\A 10:   background: re\A 11:   display: inline-block;\A 12:   text-align: center;\A 13:   margin: 0 auto 0 auto;\A 14: \A 15: }"; }
+@-webkit-keyframes banner-scroll-shrink {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    border-radius: 100%;
+    width: 150px;
+    top: -60px;
+  }
+}
+@-moz-keyframes banner-scroll-shrink {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    border-radius: 100%;
+    width: 150px;
+    top: -60px;
+  }
+}
+@-ms-keyframes banner-scroll-shrink {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    border-radius: 100%;
+    width: 150px;
+    top: -60px;
+  }
+}
+@-o-keyframes banner-scroll-shrink {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    border-radius: 100%;
+    width: 150px;
+    top: -60px;
+  }
+}
+@keyframes banner-scroll-shrink {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    border-radius: 100%;
+    width: 150px;
+    top: -60px;
+  }
+}
+@-webkit-keyframes banner-scroll-expand {
+  0% {
+    border-radius: 100%;
+    top: -60px;
+  }
+  100% {
+    border-radius: 0;
+    top: 0;
+  }
+}
+@-moz-keyframes banner-scroll-expand {
+  0% {
+    border-radius: 100%;
+    top: -60px;
+  }
+  100% {
+    border-radius: 0;
+    top: 0;
+  }
+}
+@-ms-keyframes banner-scroll-expand {
+  0% {
+    border-radius: 100%;
+    top: -60px;
+  }
+  100% {
+    border-radius: 0;
+    top: 0;
+  }
+}
+@-o-keyframes banner-scroll-expand {
+  0% {
+    border-radius: 100%;
+    top: -60px;
+  }
+  100% {
+    border-radius: 0;
+    top: 0;
+  }
+}
+@keyframes banner-scroll-expand {
+  0% {
+    border-radius: 100%;
+    top: -60px;
+  }
+  100% {
+    border-radius: 0;
+    top: 0;
+  }
+}
+/* line 52, ../../sass/partials/navs.scss */
+.logo {
+  color: #fff;
+  font-size: 120px;
+  left: 50%;
+  margin: 0 0 0 -55px;
+  position: absolute;
+}
+
+/* line 61, ../../sass/partials/navs.scss */
+.nav-wrapper.shrink .logo {
+  font-size: 50px;
+  margin: 22px 0 0 -22px;
+}
+
+@media (min-width: 719px) {
+  /* line 67, ../../sass/partials/navs.scss */
+  .nav-wrapper {
+    width: 80%;
+    left: 50%;
+    margin: 0 0 0 -40%;
+  }
+}

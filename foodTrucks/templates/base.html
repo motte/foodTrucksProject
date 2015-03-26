@@ -28,19 +28,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 <body>
-    <nav class="nav-wrapper">
+    <nav id="navBanner" class="nav-wrapper">
+
+        <header style="margin-top: 3%;">Food Trucks</header>
         <a class="logo" href=""><i class="fa fa-truck fa-flip-horizontal"></i></a>
+
     </nav>
 
+
+    <div style="height: 1000px;">herro</div>
     <div id="container"></div>
     <div id="cont"></div>
 
 {% block main_content %}{% endblock %}
 
 <!-- The core React library -->
-<script src="//fb.me/react-0.13.1.min.js"></script>
+<!--<script src="//fb.me/react-0.13.1.min.js"></script>-->
 
-<script>
+<script type="text/javascript">
 
 //    var closure = function(){
 //        var moo = "Moo!";
@@ -50,71 +55,94 @@
 //        }
 //    }();
 
-    window.onload = function() {closure()};
+//    window.onload = function() {closure()};
+//
+//
+//    /* This does a nice live counter */
+//    var Timer = React.createClass({displayName: "Timer",
+//        getInitialState: function() {
+//            return {secondsElapsed: 0};
+//        },
+//        tick: function() {
+//            this.setState({secondsElapsed: this.state.secondsElapsed + 1});
+//        },
+//        componentDidMount: function() {
+//            this.interval = setInterval(this.tick, 1000);
+//        },
+//        componentWillUnmount: function() {
+//            clearInterval(this.interval);
+//        },
+//        render: function() {
+//            return (
+//                React.createElement("div", null, "Seconds Elapsed: ",
+//                this.state.secondsElapsed)
+//            );
+//        }
+//    });
+//
+//    var mountNode = document.getElementById('cont');
+//
+//
+//    function nativeAjax(url, data, selector, callback){
+//        var r = new XMLHttpRequest();
+//        r.open("POST", url, true);
+//        r.onreadystatechange = function() {
+//            if (r.readyState != 4 || r.status != 200) {
+//                return callback();
+//            }
+//            console.log(r.responseText);
+//        };
+//        r.send("a=1&b=2&c=3");
+//    }
+//
+//    function jAajx(action, data, selector, callback){
+//        // data = '{"moo" : [' + '{"foo":"coo","soo":"too"}' + ']}';
+//        // need to convert the string to object
+//        JSON.parse(data);
+//
+//        $.ajax({
+//            url: action,
+//            type: "POST",
+//            data: "a=1&b=2&c=3",
+//            success: function(d) {
+//                console.log(d);
+//            }
+//        });
+//    }
 
+//    $.ajax({
+//        url: '/moo',
+//        type: 'POST',
+//        data: 'a=1&b=2&c=3',
+//        success: function(moo) {
+//            console.log(moo);
+//        }
+//    });
+//
+//     XMLHttpRequest();
+//
+//    setTimeout(function(){
+//        animateHeader();
+//    },3000);
+//
+//    function animateHeaderWidth() {
+//        var bannerWidth = document.getElementById('navBanner').style.width;
+//        function frame() {
+//            document.getElementById('navBanner').style.width = bannerWidth;
+//        }
+//
+//        var id = setInterval(frame, 10);
+//    }
 
-    /* This does a nice live counter */
-    var Timer = React.createClass({displayName: "Timer",
-        getInitialState: function() {
-            return {secondsElapsed: 0};
-        },
-        tick: function() {
-            this.setState({secondsElapsed: this.state.secondsElapsed + 1});
-        },
-        componentDidMount: function() {
-            this.interval = setInterval(this.tick, 1000);
-        },
-        componentWillUnmount: function() {
-            clearInterval(this.interval);
-        },
-        render: function() {
-            return (
-                React.createElement("div", null, "Seconds Elapsed: ",
-                this.state.secondsElapsed)
-            );
+    document.getElementById('navBanner').onclick = function(){
+        if (this.className.indexOf('shrink') > -1) {
+            this.className = 'nav-wrapper';
+        } else {
+            this.className = 'nav-wrapper shrink';
         }
-    });
-
-    var mountNode = document.getElementById('cont');
+    };
 
 
-    function nativeAjax(url, data, selector, callback){
-        var r = new XMLHttpRequest();
-        r.open("POST", url, true);
-        r.onreadystatechange = function() {
-            if (r.readyState != 4 || r.status != 200) {
-                return callback();
-            }
-            console.log(r.responseText);
-        };
-        r.send("a=1&b=2&c=3");
-    }
-
-    function jAajx(action, data, selector, callback){
-        // data = '{"moo" : [' + '{"foo":"coo","soo":"too"}' + ']}';
-        // need to convert the string to object
-        JSON.parse(data);
-
-        $.ajax({
-            url: action,
-            type: "POST",
-            data: "a=1&b=2&c=3",
-            success: function(d) {
-                console.log(d);
-            }
-        });
-    }
-
-    $.ajax({
-        url: '/moo',
-        type: 'POST',
-        data: 'a=1&b=2&c=3',
-        success: function(moo) {
-            console.log(moo);
-        }
-    });
-
-     XMLHttpRequest();
 
 </script>
 {% block more_body_scripts %}{% endblock %}

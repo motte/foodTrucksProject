@@ -1,0 +1,74 @@
+@import '../core';
+
+.nav-wrapper {
+  background: $primaryColor;
+  border-bottom: 1px solid #eee;
+  color: #fcfcfc;
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: 100;
+  height: 30%;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+//  transform: translateX(-50%);
+  z-index: $rightBelowModal;
+  @include animation('banner-scroll-expand 300ms');
+}
+
+.nav-wrapper.shrink {
+  border-radius: 100%;
+  height: 120px;
+  width: 150px;
+  top: -60px;
+  left: 50%;
+  margin-left: -75px;
+  @include animation('banner-scroll-shrink 300ms');
+}
+
+@include keyframes('banner-scroll-shrink') {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    border-radius: 100%;
+    width: 150px;
+    top: -60px;
+  }
+}
+
+@include keyframes('banner-scroll-expand') {
+  0% {
+    border-radius: 100%;
+    top: -60px;
+  }
+  100% {
+    border-radius: 0;
+    top: 0;
+  }
+}
+
+.logo {
+  color: #fff;
+  font-size: 120px;
+  left: 50%;
+  margin: 0 0 0 -55px;
+  position: absolute;
+//  transform: translate(-50%,10%);
+}
+
+.nav-wrapper.shrink .logo {
+  font-size: 50px;
+  margin: 22px 0 0 -22px;
+}
+
+@media (min-width: 719px) {
+  .nav-wrapper {
+    width: 80%;
+    left: 50%;
+    margin: 0 0 0 -40%;
+  }
+
+
+}

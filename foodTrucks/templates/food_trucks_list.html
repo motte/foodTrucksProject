@@ -6,7 +6,13 @@
 {% block main_content %}
 
 <header>{{city}}</header>
+<section>
 
+
+    {% for truck in food_truck_data %}
+        {{ truck }}<br /><br />
+    {% endfor %}
+</section>
 
 
 {% endblock %}

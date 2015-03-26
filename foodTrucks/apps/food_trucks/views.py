@@ -4,6 +4,7 @@ import urllib
 import json
 
 
+
 class FoodTruckTemplateView(TemplateView):
     template_name = 'food_trucks_list.html'
 
@@ -14,11 +15,13 @@ class FoodTruckTemplateView(TemplateView):
     def associate_yelp(input_data):
         output_data = input_data
         for truck in input_data:
-            print truck
+            # print truck['applicant']
+            response = urllib.urlopen('http://api.yelp.com/v2/search?cll=%s,%s' % (truck['latitude'], truck['longitude']))
+            print json.loads(response)
         return output_data
 
     def get_context_data(self, **kwargs):
-        response_data = urllib.urlopen('https://data.sfgov.org/resource/rqzj-sfat.json')
+        response_data = urllib.urlopen('https://data.sfgov.org/resource/rqzj-sfat.json?$$app_token=2j4ggSjUP1A7WCkhKSnPrPML6')
         json_data = json.loads(response_data.read())
         context = super(FoodTruckTemplateView, self).get_context_data(**kwargs)
         context['food_truck_data'] = self.associate_yelp(json_data)

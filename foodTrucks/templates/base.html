@@ -36,7 +36,7 @@
     </nav>
 
 
-    <div style="height: 1000px;">herro</div>
+    <div style="height: 1000px;"></div>
     <div id="container"></div>
     <div id="cont"></div>
 
@@ -47,6 +47,8 @@
 
 <script type="text/javascript">
 
+    var pastScroll = 0;
+    var $navBanner = document.getElementById('navBanner');
 //    var closure = function(){
 //        var moo = "Moo!";
 //
@@ -134,7 +136,7 @@
 //        var id = setInterval(frame, 10);
 //    }
 
-    document.getElementById('navBanner').onclick = function(){
+    $navBanner.onclick = function(){
         if (this.className.indexOf('shrink') > -1) {
             this.className = 'nav-wrapper';
         } else {
@@ -142,7 +144,20 @@
         }
     };
 
-
+    window.onscroll = function(){
+        var tempScrollHigh = pastScroll + 100;
+        var tempScrollLow = pastScroll - 100;
+        // scroll down
+        if (window.scrollY > tempScrollHigh) {
+            console.log('a');
+            $navBanner.className = 'nav-wrapper shrink';
+            pastScroll = window.scrollY;
+        } else if (window.scrollY < tempScrollLow) {
+            console.log('b');
+            $navBanner.className = 'nav-wrapper';
+            pastScroll = window.scrollY;
+        }
+    };
 
 </script>
 {% block more_body_scripts %}{% endblock %}
